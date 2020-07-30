@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{7C79E60B-EA36-4ECA-8C30-139CC453B50A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{DCB7DA05-9661-4CCB-A26B-D74DF04C7D09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{0BC6748B-82D5-45BA-A812-59A2D25F7D52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Tests", "4-Tests", "{4FD02925-0163-4070-8046-58D2B839D0F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1-Data", "3.1-Data", "{404B0F57-190C-45E8-809A-D478B2F5B972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2-CrossCutting", "3.2-CrossCutting", "{9DC1146F-24DC-44B4-A873-8D8F4B751D44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Potter.Domain", "Potter.Domain\Potter.Domain.csproj", "{7AABB1D1-049F-4C67-8CC7-19889F3EB9C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Potter.Tests", "Potter.Test\Potter.Tests.csproj", "{CC35BE17-5677-49F8-BF33-DD1EDD117AA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalServices", "ExternalServices", "{2900F67B-BB2B-43E1-99A7-F3178E6F9762}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{3803DD13-3A65-47EF-9036-697DD0F84E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Potter.Infra.CrossCutting.ExternalServices.PotterApi", "Potter.Infra.CrossCutting.ExternalServices.PotterApi\Potter.Infra.CrossCutting.ExternalServices.PotterApi.csproj", "{E3544DF2-3CAF-4B9B-A5F5-750E9BC1FFDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Potter.Presentation.Api", "Potter.Presentation.Api\Potter.Presentation.Api.csproj", "{070AC471-6B6D-4DE8-AE70-D6E817BD2BC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Potter.Infra.Data", "Potter.Infra.Data\Potter.Infra.Data.csproj", "{7CA28AB8-8488-4483-ACBC-E72A0BBECC6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AABB1D1-049F-4C67-8CC7-19889F3EB9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AABB1D1-049F-4C67-8CC7-19889F3EB9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AABB1D1-049F-4C67-8CC7-19889F3EB9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AABB1D1-049F-4C67-8CC7-19889F3EB9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC35BE17-5677-49F8-BF33-DD1EDD117AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC35BE17-5677-49F8-BF33-DD1EDD117AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC35BE17-5677-49F8-BF33-DD1EDD117AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC35BE17-5677-49F8-BF33-DD1EDD117AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3544DF2-3CAF-4B9B-A5F5-750E9BC1FFDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3544DF2-3CAF-4B9B-A5F5-750E9BC1FFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3544DF2-3CAF-4B9B-A5F5-750E9BC1FFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3544DF2-3CAF-4B9B-A5F5-750E9BC1FFDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070AC471-6B6D-4DE8-AE70-D6E817BD2BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070AC471-6B6D-4DE8-AE70-D6E817BD2BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070AC471-6B6D-4DE8-AE70-D6E817BD2BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070AC471-6B6D-4DE8-AE70-D6E817BD2BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA28AB8-8488-4483-ACBC-E72A0BBECC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA28AB8-8488-4483-ACBC-E72A0BBECC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA28AB8-8488-4483-ACBC-E72A0BBECC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA28AB8-8488-4483-ACBC-E72A0BBECC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{404B0F57-190C-45E8-809A-D478B2F5B972} = {0BC6748B-82D5-45BA-A812-59A2D25F7D52}
+		{9DC1146F-24DC-44B4-A873-8D8F4B751D44} = {0BC6748B-82D5-45BA-A812-59A2D25F7D52}
+		{7AABB1D1-049F-4C67-8CC7-19889F3EB9C2} = {DCB7DA05-9661-4CCB-A26B-D74DF04C7D09}
+		{CC35BE17-5677-49F8-BF33-DD1EDD117AA8} = {4FD02925-0163-4070-8046-58D2B839D0F3}
+		{2900F67B-BB2B-43E1-99A7-F3178E6F9762} = {9DC1146F-24DC-44B4-A873-8D8F4B751D44}
+		{3803DD13-3A65-47EF-9036-697DD0F84E81} = {9DC1146F-24DC-44B4-A873-8D8F4B751D44}
+		{E3544DF2-3CAF-4B9B-A5F5-750E9BC1FFDF} = {2900F67B-BB2B-43E1-99A7-F3178E6F9762}
+		{070AC471-6B6D-4DE8-AE70-D6E817BD2BC9} = {7C79E60B-EA36-4ECA-8C30-139CC453B50A}
+		{7CA28AB8-8488-4483-ACBC-E72A0BBECC6C} = {404B0F57-190C-45E8-809A-D478B2F5B972}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4958283-1A26-47BB-9019-7EB929DCBDFF}
+	EndGlobalSection
+EndGlobal

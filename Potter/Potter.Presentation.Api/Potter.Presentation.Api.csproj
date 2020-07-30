@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Potter.Domain\Potter.Domain.csproj" />
+    <ProjectReference Include="..\Potter.Infra.CrossCutting.ExternalServices.PotterApi\Potter.Infra.CrossCutting.ExternalServices.PotterApi.csproj" />
+    <ProjectReference Include="..\Potter.Infra.Data\Potter.Infra.Data.csproj" />
+  </ItemGroup>
+
+
+</Project>
