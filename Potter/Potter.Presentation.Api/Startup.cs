@@ -39,8 +39,7 @@ namespace Potter.Presentation.Api
 
             services.AddTransient<ICharacterRepository, CharacterRepository>();
             services.AddTransient<CharacterHandler, CharacterHandler>();
-
-            services.AddScoped<IPotterService>(provider => new PotterService(Configuration.GetSection("AppSettings")["potterUrl"], Configuration.GetSection("AppSettings")["potterKey"]));
+            services.AddSingleton<IPotterService, PotterService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -51,10 +50,10 @@ namespace Potter.Presentation.Api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
+                app.UseExceptionHandler("/error/local-development");
+            else
+                app.UseExceptionHandler("/error");
+            
             app.UseHttpsRedirection();
 
             app.UseSwagger();

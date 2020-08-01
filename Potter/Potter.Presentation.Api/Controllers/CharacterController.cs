@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Potter.Domain.Commands.Requests;
 using Potter.Domain.Commands.Responses;
 using Potter.Domain.Entities;
@@ -14,12 +13,8 @@ namespace Potter.Presentation.Api.Controllers
     [Route("v1/characters")]
     public class CharacterController : ControllerBase
     {
-
-        private readonly ILogger<CharacterController> _logger;
-
-        public CharacterController(ILogger<CharacterController> logger)
+        public CharacterController()
         {
-            _logger = logger;
         }
 
         [Route("")]
@@ -45,7 +40,8 @@ namespace Potter.Presentation.Api.Controllers
 
         [Route("")]
         [HttpGet]
-        public async Task<IEnumerable<Character>> GetByHouse([FromQuery] string house, [FromServices] ICharacterRepository characterRepository)
+        [ResponseCache(VaryByHeader = "User-Agent", Duration = 5)]
+        public async Task<IEnumerable<Character>> Get([FromQuery] string house, [FromServices] ICharacterRepository characterRepository)
         {
             return await characterRepository.Get(house);
         }
