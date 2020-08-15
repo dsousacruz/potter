@@ -10,9 +10,11 @@ namespace Potter.Presentation.Api.Controllers
     public class ErrorController : ControllerBase
     {
         [Route("")]
+        [HttpGet]
         public IActionResult Error() => Problem();
 
         [Route("local-development")]
+        [HttpGet]
         public IActionResult ErrorLocalDevelopment([FromServices] IWebHostEnvironment webHostEnvironment)
         {
             if (webHostEnvironment.EnvironmentName != "Development")
