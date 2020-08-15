@@ -13,6 +13,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  azureSubscription: 'Free Trial'
+  appName: 'Potter Api'
 
 steps:
 - task: UseDotNet@2
@@ -39,3 +41,10 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: $(azureSubscription)
+    appType: webAppLinux
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.zip
