@@ -7,14 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-18.04'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  azureSubscription: 'Free Trial'
-  appName: 'Potter Api'
+  azureSubscription: 'Free Trial (6e5a750c-683f-4919-9a57-18e4e15da8fe)'
+  appName: 'potter-ysotec'
 
 steps:
 - task: UseDotNet@2
@@ -42,9 +42,11 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
-# - task: AzureWebApp@1
-#   inputs:
-#     azureSubscription: $(azureSubscription)
-#     appType: webAppLinux
-#     appName: $(appName)
-#     package: $(System.ArtifactsDirectory)/**/*.zip
+- task: AzureWebApp@1
+  displayName: 'Deploy Azure App Service'
+  inputs:
+    azureSubscription: $(azureSubscription)
+    appType: webApp
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.zip
+
