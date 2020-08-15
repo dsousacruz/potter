@@ -1,0 +1,52 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  azureSubscription: 'Free Trial (6e5a750c-683f-4919-9a57-18e4e15da8fe)'
+  appName: 'potter-ysotec'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    version: '3.0.x'
+    packageType: runtime
+    
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' # Update this to match your need
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+
+- task: AzureWebApp@1
+  displayName: 'Deploy Azure App Service'
+  inputs:
+    azureSubscription: $(azureSubscription)
+    appType: webApp
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.zip
+
